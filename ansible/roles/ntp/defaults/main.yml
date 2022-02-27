@@ -1,0 +1,7 @@
+---
+
+# point at host 'run3'
+ntp_server1:  192.168.124.162
+
+#!!! make the above a list that is one day over-ridden
+# in file ansible/group_vars/all.yml

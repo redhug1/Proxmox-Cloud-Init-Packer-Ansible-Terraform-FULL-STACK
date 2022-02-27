@@ -1,0 +1,7 @@
+---
+- name: Baseline host provisioning
+  hosts: all
+  become: yes
+  roles:
+    - role: ntp
+      tags: ntp

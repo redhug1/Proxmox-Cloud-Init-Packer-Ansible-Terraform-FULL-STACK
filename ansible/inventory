@@ -1,0 +1,6 @@
+# Servers
+[servers]
+man   hostname=man   ansible_ssh_host=192.168.124.223 ansible_ssh_user=rhys
+cw1   hostname=cw1   ansible_ssh_host=192.168.124.224 ansible_ssh_user=rhys
+cui   hostname=cui   ansible_ssh_host=192.168.124.225 ansible_ssh_user=rhys
+bast  hostname=bast  ansible_ssh_host=192.168.124.226 ansible_ssh_user=rhys

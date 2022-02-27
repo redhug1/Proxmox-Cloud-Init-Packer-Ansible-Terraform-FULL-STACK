@@ -1,0 +1,7 @@
+---
+
+- name: start_restart_ntp_client
+  systemd: 
+    name: ntp
+    state: restarted
+    enabled: yes

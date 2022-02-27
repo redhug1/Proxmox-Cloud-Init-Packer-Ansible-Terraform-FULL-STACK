@@ -1,0 +1,27 @@
+---
+  - name: "Create partitions on sdb"
+    hosts: all
+    become: yes
+    gather_facts: True
+
+    tasks:   
+      - name: install parted
+        package:
+          name: parted
+          state: present 
+
+      - name: Add new partition /dev/sdb1
+        parted:
+          device: /dev/sdb
+          number: 1
+          state: present
+
+      - filesystem:
+          fstype: ext4
+          dev: /dev/sdb1
+
+      - mount:
+          fstype: ext4
+          src: /dev/sdb1
+          path: /work
+          state: mounted

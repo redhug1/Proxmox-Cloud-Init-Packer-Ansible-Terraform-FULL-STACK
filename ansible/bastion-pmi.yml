@@ -1,0 +1,8 @@
+---
+- name: Baseline host provisioning of bastion
+#  hosts: bastion
+  hosts: all
+  become: yes
+  roles:
+    - role: packages
+      tags: packages

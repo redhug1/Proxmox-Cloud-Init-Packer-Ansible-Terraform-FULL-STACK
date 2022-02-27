@@ -1,0 +1,16 @@
+# NTP Config - Managed Using Ansible
+# Do not edit manually
+
+driftfile /var/lib/ntp/drift
+restrict default nomodify notrap nopeer noquery
+
+# Local users may interrogate the ntp server more closely.
+restrict 127.0.0.1
+restrict ::1
+
+server {{ ntp_server1 }} iburst
+
+#includefile /etc/ntp/crypto/pw    <== is this line needed
+#keys /etc/ntp/keys
+#disable monitor
+

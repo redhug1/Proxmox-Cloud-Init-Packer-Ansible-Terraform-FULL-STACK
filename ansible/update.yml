@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+     - name: Update and upgrade apt packages
+       become: yes
+       ignore_errors: yes
+       register: command_result
+       failed_when: "'FAILED' in command_result.stderr"
+       apt:
+         upgrade: "yes"
+         update_cache: yes
+         cache_valid_time: 86400 #One day
